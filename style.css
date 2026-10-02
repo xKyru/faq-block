@@ -1,0 +1,152 @@
+/* GLOBALS */
+
+:root{
+    --colorPrimary: #020097;
+    --colorSecondary: #142653;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: "Google Sans Flex", sans-serif;
+    background-color: #f3f3f3;
+    line-height: 1.5;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* UTILITIES */
+
+.section{
+    width: 90%;
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 2.5% 0;
+}
+
+/* FAQ */
+.faq__card{
+    background-color: #fff;
+    border-radius: 3rem;
+    padding: 5%;
+}
+
+
+@media (min-width: 800px) {
+    .faq__intro{
+        width: 40%;
+        position: sticky;
+        top: 2rem;
+    }
+
+}
+@media (min-width: 800px) {
+    .faq__list{
+        width: 60%;
+    }
+
+}
+@media (min-width: 800px) {
+    .faq__card{
+        display: flex;
+        gap: 5%;
+        align-items: start;
+    }
+
+}
+
+.faq__title{
+    color: var(--colorPrimary);
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+.faq__body{
+    color: var(--colorSecondary);    
+    margin: 2rem 0;
+    line-height: 2;
+}
+
+.faq__image{
+    border-radius: 1rem;
+}
+
+.faq__item{
+    margin-bottom: 1rem;
+    background-color: #f3f3f3;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.faq__item summary{
+    list-style: none;
+    background-color: #f3f3f3;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.faq__item[open] summary{
+    background-color: var(--colorPrimary);
+}
+
+.faq__item::details-content{
+    block-size: 0;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.faq__item[open]::details-content{
+    block-size: 25rem;
+    opacity: 1;
+}
+
+.faq__question{
+    margin: 0;
+    color: var(--colorSecondary);
+    font-size: 2.2rem;
+}
+
+.faq__item[open] .faq__question{
+    color: #fff;
+}
+
+.faq__icon::before{
+    content: '+';
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--colorPrimary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    place-items: center;
+    transition: 0.3s;
+}
+
+.faq__item[open] .faq__icon::before{
+    content: '-';
+    color: var(--colorPrimary);
+    background-color: #fff;
+}
+
+.faq__answer{
+    padding: 2.5rem;
+    background-color: #f3f3f3;
+    line-height: 2;
+}
