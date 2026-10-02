@@ -1,1 +1,1 @@
-# faq-block
+# FAQ Block
